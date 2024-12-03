@@ -9,71 +9,106 @@ import jakarta.persistence.*;
  * 
  */
 @Entity
-@Table(name="mascotas")
-@NamedQuery(name="Mascota.findAll", query="SELECT m FROM Mascota m")
+@Table(name="tareas")
+@NamedQuery(name="Mascota.findAll", query="SELECT m FROM gestask2 m")
 public class Mascota implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="mas_id")
-	private int masId;
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="nombre_tarea")
+	private String nombre_tarea;
 
-	@Column(name="mas_edad")
-	private byte masEdad;
+	@Column(name="descripcion")
+	private String descripcion;
 
-	@Column(name="mas_estatus")
-	private byte masEstatus;
+	@Column(name="estado")
+	private String estado;
 
-	@Column(name="mas_nombre")
-	private String masNombre;
+	@Column(name="fecha_inicio")
+	private String fecha_inicio;
+
+	@Column(name="fecha_vencimiento")
+	private String fecha_vencimiento;
+
+	@Column(name="id_usuario")
+	private int id_usuario;
+
+
 
 	//bi-directional many-to-one association to TipoMascota
 	@ManyToOne
-	@JoinColumn(name="tip_id")
-	private TipoMascota tipoMascota;
+	@JoinColumn(name="rol")
+	private usuarios usuarios;
 
-	public Mascota() {
+	public tareas() {
 	}
 
-	public int getMasId() {
-		return this.masId;
+	public int getid() {
+		return this.id;
 	}
 
-	public void setMasId(int masId) {
-		this.masId = masId;
+	public void setid(int id) {
+		this.id = id;
 	}
 
-	public byte getMasEdad() {
-		return this.masEdad;
+	public String getnombre_tarea() {
+		return this.nombre_tarea;
 	}
 
-	public void setMasEdad(byte masEdad) {
-		this.masEdad = masEdad;
+	public void setnombre_tarea(String nombre_tarea) {
+		this.nombre_tarea = nombre_tarea;
 	}
 
-	public byte getMasEstatus() {
-		return this.masEstatus;
+	public String getdescripcion() {
+		return this.descripcion;
 	}
 
-	public void setMasEstatus(byte masEstatus) {
-		this.masEstatus = masEstatus;
+	public void setdescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
-	public String getMasNombre() {
-		return this.masNombre;
+	public String getestado() {
+		return this.estado;
 	}
 
-	public void setMasNombre(String masNombre) {
-		this.masNombre = masNombre;
+	public void setestado(String estado) {
+		this.estado = estado;
 	}
 
-	public TipoMascota getTipoMascota() {
-		return this.tipoMascota;
+	public String getfecha_inicio() {
+		return this.fecha_inicio;
 	}
 
-	public void setTipoMascota(TipoMascota tipoMascota) {
-		this.tipoMascota = tipoMascota;
+	public void setfecha_inicio(String fecha_inicio) {
+		this.fecha_inicio = fecha_inicio;
+	}
+
+	public String getfecha_vencimiento() {
+		return this.fecha_vencimiento;
+	}
+
+	public void setfecha_vencimiento(String fecha_vencimiento) {
+		this.fecha_vencimiento = fecha_vencimiento;
+	}
+
+	public int getid_usuario() {
+		return this.id_usuario;
+	}
+
+	public void setid_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+
+	public usuarios getusuarios() {
+		return this.usuarios;
+	}
+
+	public void setrol(usuarios usuarios) {
+		this.usuarios = usuarios;
 	}
 
 }
