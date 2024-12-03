@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Application<co.edu.uniempresarial-gestask>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "co.edu.uniempresarial.Application",
+      "projectName": "co.edu.uniempresarial-gestask",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
