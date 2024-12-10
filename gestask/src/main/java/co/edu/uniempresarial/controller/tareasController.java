@@ -23,26 +23,26 @@ public class tareasController {
 	@Autowired
 	ItareasService service;
 	
-	@GetMapping(value="tareas")//endpoint
+	@GetMapping(value="tareas/add")
 	public List<tareas> getAlltareas() {
 		return service.todastareas();
 	}
 	
-	/*@GetMapping(value="gestask-id/{id}")
+	@GetMapping(value="tareas-id/{id}")
 	public tareas gettareasById(@RequestParam("id")int id) {
 		return service.buscarIdtareas(id);
 	}
 
-	@PostMapping(value="gestask")
+	@PostMapping(value="tareas")
 	public List<tareas> posttareas(@RequestBody tareas tareas){
 		return service.agregartareas(tareas);
 	}
 	
-	@PutMapping(value="gestask")
+	@PutMapping(value="tareas")
 	public tareas puttareas(@RequestBody tareas tareas) {
 		return service.actualizartareas(tareas);
 	}
-	*/
+	
 	
 	
 

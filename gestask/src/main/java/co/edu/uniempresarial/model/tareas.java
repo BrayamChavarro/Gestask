@@ -34,9 +34,6 @@ public class tareas implements Serializable {
 	private int id_usuario;
 
 
-
-
-
 	public tareas() {
 	}
 

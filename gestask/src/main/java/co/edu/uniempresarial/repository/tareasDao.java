@@ -39,10 +39,11 @@ public class tareasDao implements Itareas {
 
 	@Override
 	public boolean deletetareas(int id) {
-		// TODO Auto-generated method stub
+		if (jpa.existsById(id)) {
+			jpa.deleteById(id);
+			return true;
+		}
 		return false;
-	}
-
- 
+	 }
 
 }

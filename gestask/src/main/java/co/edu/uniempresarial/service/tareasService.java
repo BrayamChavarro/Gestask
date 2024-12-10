@@ -14,32 +14,32 @@ import org.springframework.stereotype.Service;
 public class tareasService implements ItareasService{
 
     @Autowired
-    Itareas task;
+    Itareas dao;
 
     @Override
     public List<tareas> agregartareas(tareas tareas) {
         
-        return task.addtareas(tareas);
+        return dao.addtareas(tareas);
     }
 
     @Override
     public tareas actualizartareas(tareas tareas) {
-       return null;
+       return dao.upptareas(tareas);
     }
 
     @Override
     public List<tareas> todastareas() {
-        return  task.getAlltareas();
+        return  dao.getAlltareas();
     }
 
     @Override
     public tareas buscarIdtareas(int id) {
-         return null; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         return dao.getIdtareas(id); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
     public boolean bajatareas(int id) {
-         return false; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         return dao.deletetareas(id); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 	
 	
