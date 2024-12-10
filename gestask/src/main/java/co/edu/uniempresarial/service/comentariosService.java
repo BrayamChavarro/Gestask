@@ -37,8 +37,7 @@ import co.edu.uniempresarial.repository.Icomentarios;
 
         @Override
         public boolean bajacomentarios(int id) {
-            // TODO Auto-generated method stub
-            return false;
+            return dao.deletecomentarios(id);
         }
     
     }

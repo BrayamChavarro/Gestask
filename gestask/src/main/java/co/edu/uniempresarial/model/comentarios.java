@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 
     @Entity
-    @Table(name="comentario")
+    @Table(name="comentarios")
     @NamedQuery(name="comentarios.findAll", query="SELECT m FROM comentarios m")
     public class comentarios implements Serializable  {
 

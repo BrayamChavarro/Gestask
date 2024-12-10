@@ -45,13 +45,13 @@ import org.springframework.web.bind.annotation.RequestParam;
         public comentarios putcomentarios(@RequestBody comentarios comentarios) {
             return service.actualizarcomentarios(comentarios);
         }
-           @DeleteMapping(value = "/historial/{id}")
+           @DeleteMapping(value = "/comentarios/{id}")
 	public ResponseEntity<String> deletecomentarios(@PathVariable int id) {
     boolean isDeleted = service.bajacomentarios(id);
     if (isDeleted) {
-        return ResponseEntity.ok("Historial eliminado correctamente.");
+        return ResponseEntity.ok("comentario eliminado correctamente.");
     }else {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("historial no encontrado.");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("comentario no encontrado.");
     }
     }
     }

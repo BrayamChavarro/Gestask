@@ -32,8 +32,8 @@ public class tareasController {
 		return service.todastareas();
 	}
 	
-	@GetMapping(value="tareas-id/{id}")
-	public tareas gettareasById(@RequestParam("id")int id) {
+	@GetMapping(value="tareas/{id}")
+	public tareas gettareasById(@PathVariable int id) {
 		return service.buscarIdtareas(id);
 	}
 
