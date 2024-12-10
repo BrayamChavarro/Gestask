@@ -39,11 +39,12 @@ public class tareasDao implements Itareas {
 
 	@Override
 	public boolean deletetareas(int id) {
-		if (jpa.existsById(id)) {
-			jpa.deleteById(id);
-			return true;
-		}
-		return false;
-	 }
+    if (jpa.existsById(id)) {
+        jpa.deleteById(id);
+        return true;
+    }
+    return false;
+}
+
 
 }

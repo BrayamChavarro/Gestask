@@ -9,7 +9,11 @@ import co.edu.uniempresarial.service.ItareasService;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +27,7 @@ public class tareasController {
 	@Autowired
 	ItareasService service;
 	
-	@GetMapping(value="tareas/add")
+	@GetMapping(value="tareas")
 	public List<tareas> getAlltareas() {
 		return service.todastareas();
 	}
@@ -33,7 +37,7 @@ public class tareasController {
 		return service.buscarIdtareas(id);
 	}
 
-	@PostMapping(value="tareas")
+	@PostMapping(value="tareas/add")
 	public List<tareas> posttareas(@RequestBody tareas tareas){
 		return service.agregartareas(tareas);
 	}
@@ -43,7 +47,18 @@ public class tareasController {
 		return service.actualizartareas(tareas);
 	}
 	
-	
-	
+	@DeleteMapping(value = "/tareas/{id}")
+	public ResponseEntity<String> deletetareas(@PathVariable int id) {
+    boolean isDeleted = service.bajatareas(id);
+    if (isDeleted) {
+        return ResponseEntity.ok("Tarea eliminada correctamente.");
+    } else {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Tarea no encontrada.");
+    }
+}
 
+
+    
+
+                        
 }

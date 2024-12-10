@@ -14,4 +14,5 @@ public interface Itareas {
 	
 	boolean deletetareas(int id);
 
+
 }

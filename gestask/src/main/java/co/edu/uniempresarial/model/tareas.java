@@ -85,6 +85,14 @@ public class tareas implements Serializable {
 		this.fecha_vencimiento = fecha_vencimiento;
 	}
 
+	public int getid_usuario() {
+		return this.id_usuario;
+	}
+
+	public void setid_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
+	}
+
 	
 
 }

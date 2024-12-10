@@ -2,6 +2,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Application",
+      "request": "launch",
+      "mainClass": "co.edu.uniempresarial.Application",
+      "projectName": "gestask"
+    },
+    {
+      "type": "java",
       "name": "Spring Boot-Application<co.edu.uniempresarial-gestask>",
       "request": "launch",
       "cwd": "${workspaceFolder}",
