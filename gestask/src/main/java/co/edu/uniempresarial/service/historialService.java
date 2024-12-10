@@ -37,8 +37,7 @@ import co.edu.uniempresarial.repository.Ihistorial;
 
         @Override
         public boolean bajahistorial(int id) {
-            // TODO Auto-generated method stub
-            return false;
+            return dao.deletehistorial(id);
         }
     
     }

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import co.edu.uniempresarial.model.comentarios;
-import co.edu.uniempresarial.model.tareas;
+
     
 @Repository
 public class comentariosDao implements Icomentarios {
