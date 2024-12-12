@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-    @RestController
+@CrossOrigin(origins = "*", maxAge = 3600) 
+@RestController 
+@RequestMapping({"/gestask"}) 
     public class historialController {
         //validaciones de campos expresiones regulares - clase validator
         
@@ -32,8 +35,8 @@ import org.springframework.web.bind.annotation.RequestParam;
             return service.todashistorial();
         }
         
-        @GetMapping(value="historial-id/{id}")
-        public historial gethistorialById(@RequestParam("id")int id) {
+        @GetMapping(value="historial/{id}")
+        public historial gethistorialById(@PathVariable int id) {
             return service.buscarIdhistorial(id);
         }
         @PostMapping(value="historial")

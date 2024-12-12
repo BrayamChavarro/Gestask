@@ -1,10 +1,13 @@
 package co.edu.uniempresarial.repository;
 import java.util.List;
-    
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import co.edu.uniempresarial.model.comentarios;
+import co.edu.uniempresarial.model.historial;
 
     
 @Repository
@@ -13,7 +16,8 @@ public class comentariosDao implements Icomentarios {
         //inyeccion de dependencias por interface
         @Autowired
         IcomentariosJpa jpa;
-        
+        private final Logger log = LoggerFactory.getLogger(comentariosDao.class);
+
         
         @Override
         public List<comentarios> addcomentarios(comentarios comentarios) {
@@ -33,9 +37,10 @@ public class comentariosDao implements Icomentarios {
         }
     
         @Override
-        public comentarios getIdcomentarios(int id) {
-            return jpa.findById(id).orElse(null);
-        }
+	    public comentarios getIdcomentarios(int id) {
+        return jpa.findById(id)
+            .orElseThrow(() -> new RuntimeException("Comentario no encontrada con id " + id));
+}
     
         @Override
         public boolean deletecomentarios(int id) {
